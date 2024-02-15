@@ -64,12 +64,12 @@ class WhackAMoleVC: UIViewController {
             }
     }
     @IBAction func onStart(_ sender: UIButton){
-         timerStart()
-         enableButtons()
+        starter()
+        enableBtns()
          startBTN.isEnabled = false
         
     }
-    func timerStart(){
+    func starter(){
         gameTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
@@ -81,12 +81,12 @@ class WhackAMoleVC: UIViewController {
                     gameEnd()
                 } else {
                     let randomIndex = Int.random(in: 0..<gameBtnCLCTN.count)
-                    updateButton(at: randomIndex)
+                    updatingButton(at: randomIndex)
     
                 }
         timeRemaining -= 1
     }
-    func updateButton(at index: Int) {
+    func updatingButton(at index: Int) {
             let button = gameBtnCLCTN[index]
             let isMole = !isPrime(Int.random(in: 1...100))
             let imageName = isMole ? "mole" : "bomb"
@@ -125,7 +125,7 @@ class WhackAMoleVC: UIViewController {
         timerLBL.text = "1:00"
         updateHighScore()
         startBTN.isEnabled = false
-        enableButtons()
+        enableBtns()
         let message = "Your score is \(scoring).\nYou have tapped on the mole \(moleWhackedCount) times out of \(moleCount).\nYou have tapped on the bomb \(explosionCount) times out of \(bombCount)."
         let alert = UIAlertController(title: "Time's Up! ⏱⏱", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -133,7 +133,7 @@ class WhackAMoleVC: UIViewController {
     }
     
     @IBAction func onReset(_ sender: UIButton){
-        gameReset()
+        gameReseting()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,7 +175,7 @@ class WhackAMoleVC: UIViewController {
                 highScoreLBL.text = String(highScore)
             }
         }
-    func gameReset(){
+    func gameReseting(){
         timeRemaining = 60
         scoring = 0
                 moleWhackedCount = 0
@@ -192,13 +192,13 @@ class WhackAMoleVC: UIViewController {
                 updateHighScore()
         AudioServicesPlaySystemSound(1152)
     }
-    func enableButtons() {
+    func enableBtns() {
         for button in gameBtnCLCTN {
             button.isEnabled = true
         }
     }
     
-    func disableButtons() {
+    func disableBtns() {
         for button in gameBtnCLCTN {
             button.isEnabled = false
         }
