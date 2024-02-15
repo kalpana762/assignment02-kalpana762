@@ -82,6 +82,7 @@ class WhackAMoleVC: UIViewController {
                 } else {
                     let randomIndex = Int.random(in: 0..<gameBtnCLCTN.count)
                     updateButton(at: randomIndex)
+    
                 }
         timeRemaining -= 1
     }
@@ -182,7 +183,7 @@ class WhackAMoleVC: UIViewController {
                 explosionCount = 0
                 bombCount = 0
                 timerLBL.text = "01:00"
-                scoreLBL.text = "Score: 0"
+                scoreLBL.text = "0"
                 startBTN.isEnabled = true
                 for button in gameBtnCLCTN {
                     button.setImage(UIImage(named: "hole"), for: .normal)
