@@ -53,10 +53,12 @@ class WhackAMoleVC: UIViewController {
                     sender.setImage(UIImage(named: "moleHit"), for: .normal)
                     scoring += 10
                     moleWhackedCount += 1
+                    AudioServicesPlaySystemSound(1001)
                 } else if currentImage == UIImage(named: "bomb") {
                     sender.setImage(UIImage(named: "blast"), for: .normal)
                     scoring -= 5
                     explosionCount += 1
+                    AudioServicesPlaySystemSound(1322)
                 }
                 scoreLBL.text = "Score: \(scoring)"
             }
@@ -187,6 +189,7 @@ class WhackAMoleVC: UIViewController {
                 }
         gameTime?.invalidate()
                 updateHighScore()
+        AudioServicesPlaySystemSound(1152)
     }
     func enableButtons() {
         for button in gameBtnCLCTN {
