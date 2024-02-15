@@ -74,6 +74,9 @@ class WhackAMoleVC: UIViewController {
     }
     
     @objc func timerUpdate(){
+        for gbtn in gameBtnCLCTN{
+            gbtn.isUserInteractionEnabled=false
+        }
         let minutes = timeRemaining / 60
                 let seconds = timeRemaining % 60
                 timerLBL.text = String(format: "%02d:%02d", minutes, seconds)
@@ -82,7 +85,7 @@ class WhackAMoleVC: UIViewController {
                 } else {
                     let randomIndex = Int.random(in: 0..<gameBtnCLCTN.count)
                     updatingButton(at: randomIndex)
-    
+                    gameBtnCLCTN[randomIndex].isUserInteractionEnabled=true
                 }
         timeRemaining -= 1
     }
