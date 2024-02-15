@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WhackA MoleVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="S567076WhackAMole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WhackAMoleVC" customModule="S567076WhackAMole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,6 +99,9 @@
                                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="baseBackgroundColor" red="0.0" green="0.4039215686" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="onStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0jb-XH-o5O"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-gH-RNs" userLabel="Reset">
                                                                 <rect key="frame" x="190.66666666666663" y="0.0" width="182.33333333333337" height="34.333333333333336"/>
@@ -107,6 +110,9 @@
                                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="baseBackgroundColor" red="0.0" green="0.40392156862745099" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="onReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gd1-ea-Thf"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -122,16 +128,25 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="119" height="185.33333333333334"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NrV-LF-b4X"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-qP-5FH">
                                                                 <rect key="frame" x="127" y="0.0" width="119" height="185.33333333333334"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eua-qo-8gU"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8z8-nJ-gyz">
                                                                 <rect key="frame" x="254" y="0.0" width="119" height="185.33333333333334"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7iF-uK-2Hs"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -142,16 +157,25 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="119" height="185.66666666666666"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XJw-FA-exh"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15B-Mb-pby">
                                                                 <rect key="frame" x="127" y="0.0" width="119" height="185.66666666666666"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cby-uD-vov"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgB-dT-ezL">
                                                                 <rect key="frame" x="254" y="0.0" width="119" height="185.66666666666666"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fF7-oy-byL"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -162,16 +186,25 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="119" height="185.33333333333334"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdK-np-bTQ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI4-Kp-6xR">
                                                                 <rect key="frame" x="127" y="0.0" width="119" height="185.33333333333334"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8x-Nf-6zL"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4n-bP-zUL">
                                                                 <rect key="frame" x="254" y="0.0" width="119" height="185.33333333333334"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="hole"/>
+                                                                <connections>
+                                                                    <action selector="onClickGameBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aFg-Ih-8hP"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -210,22 +243,23 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Reset" destination="mqk-gH-RNs" id="Jaa-y6-HCT"/>
-                        <outlet property="StartBTN" destination="tgw-Ru-87i" id="5UI-kS-6v6"/>
-                        <outlet property="button1" destination="h19-Y8-yNv" id="atA-hb-YsP"/>
-                        <outlet property="button2" destination="gXE-qP-5FH" id="dpW-WL-uKP"/>
-                        <outlet property="button3" destination="8z8-nJ-gyz" id="W1o-B5-UYQ"/>
-                        <outlet property="button4" destination="Euc-JL-DO3" id="dq3-rc-OaQ"/>
-                        <outlet property="button5" destination="15B-Mb-pby" id="KiD-SV-VAp"/>
-                        <outlet property="button6" destination="QgB-dT-ezL" id="vGw-AD-HM3"/>
-                        <outlet property="button7" destination="7SU-XJ-MiY" id="E6s-l6-79X"/>
-                        <outlet property="button8" destination="MI4-Kp-6xR" id="g5w-kp-vqh"/>
-                        <outlet property="button9" destination="h4n-bP-zUL" id="9KP-AP-mnG"/>
-                        <outlet property="header" destination="x8k-l3-HOy" id="YL3-nF-rQf"/>
-                        <outlet property="highScoreSV" destination="PYD-iy-9QW" id="peJ-k7-jCK"/>
-                        <outlet property="launchLAV" destination="kE3-xo-1BS" id="mJx-nh-mrE"/>
-                        <outlet property="scoreSV" destination="eiv-Nk-H1s" id="C2R-mi-c0y"/>
-                        <outlet property="timerSV" destination="5OM-vD-ScC" id="1XM-jd-1fV"/>
+                        <outlet property="highScoreLBL" destination="vkt-3n-2FH" id="KNS-N6-BPa"/>
+                        <outlet property="highScoreSV" destination="PYD-iy-9QW" id="eNe-lz-kcq"/>
+                        <outlet property="launchLAV" destination="kE3-xo-1BS" id="yEZ-GT-fcq"/>
+                        <outlet property="scoreLBL" destination="CVH-Sv-GQA" id="k6m-Jm-vVc"/>
+                        <outlet property="scoreSV" destination="eiv-Nk-H1s" id="Rwa-Lb-6Rd"/>
+                        <outlet property="startBTN" destination="tgw-Ru-87i" id="7WJ-gP-GSJ"/>
+                        <outlet property="timerLBL" destination="sQi-70-l1G" id="3yb-yz-uId"/>
+                        <outlet property="timerSV" destination="5OM-vD-ScC" id="0AV-MN-jtX"/>
+                        <outletCollection property="gameBtnCLCTN" destination="h19-Y8-yNv" collectionClass="NSMutableArray" id="2lL-Qk-B5R"/>
+                        <outletCollection property="gameBtnCLCTN" destination="gXE-qP-5FH" collectionClass="NSMutableArray" id="TaA-uJ-QeG"/>
+                        <outletCollection property="gameBtnCLCTN" destination="8z8-nJ-gyz" collectionClass="NSMutableArray" id="cul-Jh-KoR"/>
+                        <outletCollection property="gameBtnCLCTN" destination="Euc-JL-DO3" collectionClass="NSMutableArray" id="Qkl-Ot-BB0"/>
+                        <outletCollection property="gameBtnCLCTN" destination="15B-Mb-pby" collectionClass="NSMutableArray" id="sAU-TN-rAF"/>
+                        <outletCollection property="gameBtnCLCTN" destination="QgB-dT-ezL" collectionClass="NSMutableArray" id="NO1-ka-7Tf"/>
+                        <outletCollection property="gameBtnCLCTN" destination="7SU-XJ-MiY" collectionClass="NSMutableArray" id="lwI-gX-UCq"/>
+                        <outletCollection property="gameBtnCLCTN" destination="MI4-Kp-6xR" collectionClass="NSMutableArray" id="Wet-Ci-u6R"/>
+                        <outletCollection property="gameBtnCLCTN" destination="h4n-bP-zUL" collectionClass="NSMutableArray" id="ytR-en-aMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
