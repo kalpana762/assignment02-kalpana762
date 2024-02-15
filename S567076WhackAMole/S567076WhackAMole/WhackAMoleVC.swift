@@ -48,13 +48,13 @@ class WhackAMoleVC: UIViewController {
                 }
     }
     @IBAction func onClickGameBTN(_ sender: UIButton){
-        if let currentImage = sender.currentImage {
-                if currentImage == UIImage(named: "mole") {
+        if let currentImg = sender.currentImage {
+                if currentImg == UIImage(named: "mole") {
                     sender.setImage(UIImage(named: "moleHit"), for: .normal)
                     scoring += 10
                     moleWhackedCount += 1
                     AudioServicesPlaySystemSound(1001)
-                } else if currentImage == UIImage(named: "bomb") {
+                } else if currentImg == UIImage(named: "bomb") {
                     sender.setImage(UIImage(named: "blast"), for: .normal)
                     scoring -= 5
                     explosionCount += 1
@@ -64,47 +64,47 @@ class WhackAMoleVC: UIViewController {
             }
     }
     @IBAction func onStart(_ sender: UIButton){
-        starter()
-        enableBtns()
-         startBTN.isEnabled = false
+        gameStarter()
+        enabling()
+        startBTN.isEnabled = false
         
     }
-    func starter(){
-        gameTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+    func gameStarter(){
+        gameTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeUpdation), userInfo: nil, repeats: true)
     }
     
-    @objc func timerUpdate(){
+    @objc func timeUpdation(){
         for gbtn in gameBtnCLCTN{
             gbtn.isUserInteractionEnabled=false
         }
-        let minutes = timeRemaining / 60
-                let seconds = timeRemaining % 60
-                timerLBL.text = String(format: "%02d:%02d", minutes, seconds)
-                if timeRemaining == 0 {
-                    gameEnd()
-                } else {
-                    let randomIndex = Int.random(in: 0..<gameBtnCLCTN.count)
-                    updatingButton(at: randomIndex)
-                    gameBtnCLCTN[randomIndex].isUserInteractionEnabled=true
-                }
+        let gameminutes = timeRemaining / 60
+        let gameseconds = timeRemaining % 60
+        timerLBL.text = String(format: "%02d:%02d", gameminutes, gameseconds)
+        if timeRemaining == 0 {
+            gameEnding()
+        } else {
+            let randomIndexing = Int.random(in: 0..<gameBtnCLCTN.count)
+            updatingButton(at: randomIndexing)
+            gameBtnCLCTN[randomIndexing].isUserInteractionEnabled=true
+        }
         timeRemaining -= 1
     }
     func updatingButton(at index: Int) {
-            let button = gameBtnCLCTN[index]
-            let isMole = !isPrime(Int.random(in: 1...100))
-            let imageName = isMole ? "mole" : "bomb"
-            if isMole {
-                moleCount += 1
-            } else {
+    let btns = gameBtnCLCTN[index]
+    let moles = !checkPrime(Int.random(in: 1...100))
+    let imgName = moles ? "mole" : "bomb"
+    if moles {
+            moleCount += 1
+        } else {
                 bombCount += 1
-            }
-            button.setImage(UIImage(named: imageName), for: .normal)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                button.setImage(UIImage(named: "hole"), for: .normal)
-            }
         }
-    func isPrime(_ number: Int) -> Bool {
+        btns.setImage(UIImage(named: imgName), for: .normal)
+            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            btns.setImage(UIImage(named: "hole"), for: .normal)
+        }
+    }
+    func checkPrime(_ number: Int) -> Bool {
             if number <= 1 {
                 return false
             }
@@ -122,17 +122,17 @@ class WhackAMoleVC: UIViewController {
         }
     
     
-    func gameEnd(){
+    func gameEnding(){
         gameTime?.invalidate()
         timeRemaining = 60
         timerLBL.text = "1:00"
         updateHighScore()
         startBTN.isEnabled = false
-        enableBtns()
-        let message = "Your score is \(scoring).\nYou have tapped on the mole \(moleWhackedCount) times out of \(moleCount).\nYou have tapped on the bomb \(explosionCount) times out of \(bombCount)."
-        let alert = UIAlertController(title: "Time's Up! ⏱⏱", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        enabling()
+        let messaging = "Your score is \(scoring).\nYou have tapped on the mole \(moleWhackedCount) times out of \(moleCount).\nYou have tapped on the bomb \(explosionCount) times out of \(bombCount)."
+        let alertmsg = UIAlertController(title: "Time's Up! ⏱⏱", message: messaging, preferredStyle: .alert)
+        alertmsg.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertmsg, animated: true, completion: nil)
     }
     
     @IBAction func onReset(_ sender: UIButton){
@@ -195,13 +195,13 @@ class WhackAMoleVC: UIViewController {
                 updateHighScore()
         AudioServicesPlaySystemSound(1152)
     }
-    func enableBtns() {
+    func enabling() {
         for button in gameBtnCLCTN {
             button.isEnabled = true
         }
     }
     
-    func disableBtns() {
+    func disabling() {
         for button in gameBtnCLCTN {
             button.isEnabled = false
         }
