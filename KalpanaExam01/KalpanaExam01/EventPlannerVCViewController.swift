@@ -62,6 +62,7 @@ class EventPlannerVCViewController: UIViewController {
         if let promo = promoTF.text, promo.lowercased() == "ugadi"{
             total -= total*10/100
         }
+        
         let alert = UIAlertController(title: "Booking Details", message: "venue : \(venue)\nNumber of guests: \(guest)\ntotalPrice : \(total)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.bookBTN.isEnabled = false
@@ -102,5 +103,8 @@ class EventPlannerVCViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    #Preview("KalpanaExam01"){
+        UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+    }
     
 }
