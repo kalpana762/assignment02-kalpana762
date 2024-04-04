@@ -19,7 +19,7 @@ class PropertyDetailVC: UIViewController {
     
     @IBOutlet weak var animationView: LottieAnimationView!
     
-    @IBAction func purchase(_ sender: Any) {
+    @IBAction func purchase(_ sender: UIButton) {
         var amt = 0.0
         let total = Double(price)
         amt = 0.05*total!
